@@ -72,12 +72,15 @@ def simulation_sweep(grid, R, A, Bs, C, centers, max_steps):
     return [(0, 0, 0)]
 
 @click.command(name="language")
-@click.option('--grid_file', type=click.Path(exists=True), default="tests/writeup-grid.txt", help="filename of the grid")
+@click.option('--grid_file', type=click.Path(exists=True),
+              default="tests/writeup-grid.txt",
+              help="filename of the grid")
 @click.option('--r', type=int, default=1, help="neighborhood radius")
 @click.option('--a', type=float, default=0.6, help="transition threshold A")
 @click.option('--b', type=float, default=0.8, help="transition threshold B")
 @click.option('--c', type=float, default=1.6, help="transition threshold C")
-@click.option('--max_steps', type=int, default=1, help="maximum number of simulation steps")
+@click.option('--max_steps', type=int, default=1,
+              help="maximum number of simulation steps")
 def cmd(grid_file, r, a, b, c, max_steps):
     '''
     Run the simulation.
